@@ -69,10 +69,10 @@ void TaskSouthLight(void *pvParameters)  // This is a task.
   typedef const struct State States;
   
   States SouthLights[] = {
-    {B10100100, 5000}, //Set both red lights to high
-    {B10100110, 2000}, //Set North Red, South Red and South Yellow to high
-    {B10100001, 5000}, //Set North Red and South Green to high
-    {B10100010, 2000}, //Set North Red and South Yellow to high 
+    {B10100100, 5000}, //Set all red lights to high
+    {B10100110, 2000}, //Set West Red, West Pedestrian Red , South Red and South Yellow to high
+    {B10100001, 5000}, //Set West Red, West Pedestrian Red and South Green to high
+    {B10100010, 2000}, //Set West Red, West Pedestrian Red and South Yellow to high 
     };
   for (;;) // A Task shall never return or exit.
   {
@@ -97,11 +97,11 @@ void TaskWestLight(void *pvParameters)  // This is a task.
   typedef const struct State States;
   
   States WestLights[] = {
-    {B10100100, 5000}, //Set both red lights to high
-    {B10110100, 2000}, //Set South Red, North Red and North Yellow to high
-    {B10001100, 5000}, //Set South Red and North Green to high
-    {B10010100, 2000}, //Set South Red and North Yellow to high
-    {B01001100, 5000} //Set South Red and North Green to high + pedestrian crossing to green 
+    {B10100100, 5000}, //Set all red lights to high
+    {B10110100, 2000}, //Set South Red, West Pedestrian Red, West Red and North Yellow to high
+    {B10001100, 5000}, //Set South Red, West Pedestrian Red and West Green to high
+    {B10010100, 2000}, //Set South Red, West Pedestrian Red and West Yellow to high
+    {B01001100, 5000} //Set South Red and West Green to high + pedestrian crossing to green 
     };
 
   for (;;) // A Task shall never return or exit.
